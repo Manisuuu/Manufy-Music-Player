@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manufy - Personal Music Player</title>
+
+    <link rel="stylesheet" href="manufy.css">
+    <link rel="icon" type="image/png" href="Neon Manufy Music App Icon.png">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <h2 class="logo">♫ Manufy</h2>
+
+        <nav>
+            <a href="#" class="active">⌂ Home</a>
+            <a href="#library">▤ Your Library</a>
+        </nav>
+
+        <label for="fileInput" class="add-btn">
+            + Add Music
+        </label>
+
+        <input
+            type="file"
+            id="fileInput"
+            accept="audio/*"
+            multiple
+            hidden
+        >
+
+        <div class="library-heading">YOUR PLAYLIST</div>
+
+        <div id="playlist" class="playlist"></div>
+
+        <p class="sidebar-footer">
+            Your personal music space.
+        </p>
+
+    </aside>
+
+
+    <main class="content" id="library">
+
+        <header>
+
+            <div>
+                <p class="greeting">YOUR PERSONAL MUSIC PLAYER</p>
+                <h1>Welcome To Manufy ♫</h1>
+            </div>
+
+            <span class="premium">MY MUSIC</span>
+
+        </header>
+
+
+        <section class="welcome">
+
+            <div>
+                <p>YOUR COLLECTION</p>
+
+                <h2>Music that feels like you.</h2>
+
+                <span>
+                    All your favourite songs, in one place.
+                </span>
+            </div>
+
+            <div class="welcome-icon">♫</div>
+
+        </section>
+
+
+        <section class="recent-section">
+
+            <div class="section-heading">
+                <h2>Recently Played</h2>
+                <span>Last 10 songs</span>
+            </div>
+
+            <div id="recentList" class="recent-list"></div>
+
+        </section>
+
+
+        <section class="songs-section">
+
+            <div class="section-heading">
+
+                <h2>Your Songs</h2>
+
+                <span id="songCount">15 Songs</span>
+
+            </div>
+
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your songs..."
+            >
+
+
+            <div class="filter-buttons">
+
+                <button id="allFilter" class="filter-btn active">
+                    All Songs
+                </button>
+
+                <button id="favoritesFilter" class="filter-btn">
+                    ♥ Favorites
+                </button>
+
+            </div>
+
+
+            <div class="song-header">
+
+                <span>#</span>
+                <span></span>
+                <span>Title</span>
+                <span></span>
+                <span>Duration</span>
+
+            </div>
+
+
+            <div id="songList"></div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<footer class="player">
+
+    <div class="now-playing">
+
+        <div class="mini-cover" id="currentCover">♫</div>
+
+        <div class="track-info">
+
+            <h4 id="songTitle">No Song Selected</h4>
+
+            <p id="artist">Choose a song to play</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="player-center">
+
+        <div class="controls">
+
+            <button id="shuffleBtn" title="Shuffle">⤨</button>
+
+            <button id="prevBtn" title="Previous">|◀</button>
+
+            <button id="playBtn" class="play-btn" title="Play">
+                ▶
+            </button>
+
+            <button id="nextBtn" title="Next">▶|</button>
+
+            <button id="repeatBtn" title="Repeat">↻</button>
+
+        </div>
+
+
+        <div class="progress-area">
+
+            <span id="currentTime">0:00</span>
+
+            <input
+                type="range"
+                id="progress"
+                min="0"
+                max="100"
+                value="0"
+            >
+
+            <span id="duration">0:00</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="volume-area">
+
+        <button id="muteBtn" title="Mute">🔊</button>
+
+        <input
+            type="range"
+            id="volume"
+            min="0"
+            max="100"
+            value="70"
+        >
+
+    </div>
+
+</footer>
+
+
+<audio id="audio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
